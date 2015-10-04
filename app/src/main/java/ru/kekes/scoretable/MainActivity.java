@@ -51,70 +51,139 @@ public class MainActivity extends AppCompatActivity {
             int leftScoreOnes = leftScore % 10;
 
             switch (leftScoreOnes) {
-                case 0: {leftScoreOnesView.setImageResource(R.drawable.ic_num_0);}
-                case 1: {leftScoreOnesView.setImageResource(R.drawable.ic_num_1);}
-                case 2: {leftScoreOnesView.setImageResource(R.drawable.ic_num_2);}
-                case 3: {leftScoreOnesView.setImageResource(R.drawable.ic_num_3);}
-                case 4: {leftScoreOnesView.setImageResource(R.drawable.ic_num_4);}
-                case 5: {leftScoreOnesView.setImageResource(R.drawable.ic_num_5);}
-                case 6: {leftScoreOnesView.setImageResource(R.drawable.ic_num_6);}
-                case 7: {leftScoreOnesView.setImageResource(R.drawable.ic_num_7);}
-                case 8: {leftScoreOnesView.setImageResource(R.drawable.ic_num_8);}
-                case 9: {leftScoreOnesView.setImageResource(R.drawable.ic_num_9);}
+                case 0: {leftScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {leftScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {leftScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {leftScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {leftScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {leftScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {leftScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {leftScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {leftScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {leftScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
             }
 
             switch (leftScoreTens) {
-                case 0: {leftScoreTensView.setImageResource(R.drawable.ic_num_0);}
-                case 1: {leftScoreTensView.setImageResource(R.drawable.ic_num_1);}
-                case 2: {leftScoreTensView.setImageResource(R.drawable.ic_num_2);}
-                case 3: {leftScoreTensView.setImageResource(R.drawable.ic_num_3);}
-                case 4: {leftScoreTensView.setImageResource(R.drawable.ic_num_4);}
-                case 5: {leftScoreTensView.setImageResource(R.drawable.ic_num_5);}
-                case 6: {leftScoreTensView.setImageResource(R.drawable.ic_num_6);}
-                case 7: {leftScoreTensView.setImageResource(R.drawable.ic_num_7);}
-                case 8: {leftScoreTensView.setImageResource(R.drawable.ic_num_8);}
-                case 9: {leftScoreTensView.setImageResource(R.drawable.ic_num_9);}
+                case 0: {leftScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {leftScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {leftScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {leftScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {leftScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {leftScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {leftScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {leftScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {leftScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {leftScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
             }
         } else if (view == findViewById(R.id.rightPlus)){
-            ImageView rightScoreTensView = (ImageView) findViewById(R.id.leftTens);
-            ImageView rightScoreOnesView = (ImageView) findViewById(R.id.leftOnes);
+            ImageView rightScoreTensView = (ImageView) findViewById(R.id.rightTens);
+            ImageView rightScoreOnesView = (ImageView) findViewById(R.id.rightOnes);
             rightScore++;
             int rightScoreTens = rightScore / 10;
             int rightScoreOnes = rightScore % 10;
 
             switch (rightScoreOnes) {
-                case 0: {rightScoreOnesView.setImageResource(R.drawable.ic_num_0);}
-                case 1: {rightScoreOnesView.setImageResource(R.drawable.ic_num_1);}
-                case 2: {rightScoreOnesView.setImageResource(R.drawable.ic_num_2);}
-                case 3: {rightScoreOnesView.setImageResource(R.drawable.ic_num_3);}
-                case 4: {rightScoreOnesView.setImageResource(R.drawable.ic_num_4);}
-                case 5: {rightScoreOnesView.setImageResource(R.drawable.ic_num_5);}
-                case 6: {rightScoreOnesView.setImageResource(R.drawable.ic_num_6);}
-                case 7: {rightScoreOnesView.setImageResource(R.drawable.ic_num_7);}
-                case 8: {rightScoreOnesView.setImageResource(R.drawable.ic_num_8);}
-                case 9: {rightScoreOnesView.setImageResource(R.drawable.ic_num_9);}
+                case 0: {rightScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {rightScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {rightScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {rightScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {rightScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {rightScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {rightScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {rightScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {rightScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {rightScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
             }
 
             switch (rightScoreTens) {
-                case 0: {rightScoreTensView.setImageResource(R.drawable.ic_num_0);}
-                case 1: {rightScoreTensView.setImageResource(R.drawable.ic_num_1);}
-                case 2: {rightScoreTensView.setImageResource(R.drawable.ic_num_2);}
-                case 3: {rightScoreTensView.setImageResource(R.drawable.ic_num_3);}
-                case 4: {rightScoreTensView.setImageResource(R.drawable.ic_num_4);}
-                case 5: {rightScoreTensView.setImageResource(R.drawable.ic_num_5);}
-                case 6: {rightScoreTensView.setImageResource(R.drawable.ic_num_6);}
-                case 7: {rightScoreTensView.setImageResource(R.drawable.ic_num_7);}
-                case 8: {rightScoreTensView.setImageResource(R.drawable.ic_num_8);}
-                case 9: {rightScoreTensView.setImageResource(R.drawable.ic_num_9);}
+                case 0: {rightScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {rightScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {rightScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {rightScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {rightScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {rightScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {rightScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {rightScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {rightScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {rightScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
             }
         }
     }
 
     public void minusOne(View view) {
+        if (view == findViewById(R.id.leftMinus)) {
+            ImageView leftScoreTensView = (ImageView) findViewById(R.id.leftTens);
+            ImageView leftScoreOnesView = (ImageView) findViewById(R.id.leftOnes);
+            leftScore--;
+            if (leftScore < 0) leftScore = 0;
+            int leftScoreTens = leftScore / 10;
+            int leftScoreOnes = leftScore % 10;
 
+            switch (leftScoreOnes) {
+                case 0: {leftScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {leftScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {leftScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {leftScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {leftScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {leftScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {leftScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {leftScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {leftScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {leftScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
+            }
+
+            switch (leftScoreTens) {
+                case 0: {leftScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {leftScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {leftScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {leftScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {leftScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {leftScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {leftScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {leftScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {leftScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {leftScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
+            }
+        } else if (view == findViewById(R.id.rightMinus)){
+            ImageView rightScoreTensView = (ImageView) findViewById(R.id.rightTens);
+            ImageView rightScoreOnesView = (ImageView) findViewById(R.id.rightOnes);
+            rightScore--;
+            if (rightScore < 0) rightScore = 0;
+            int rightScoreTens = rightScore / 10;
+            int rightScoreOnes = rightScore % 10;
+
+            switch (rightScoreOnes) {
+                case 0: {rightScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {rightScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {rightScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {rightScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {rightScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {rightScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {rightScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {rightScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {rightScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {rightScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
+            }
+
+            switch (rightScoreTens) {
+                case 0: {rightScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
+                case 1: {rightScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
+                case 2: {rightScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
+                case 3: {rightScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
+                case 4: {rightScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
+                case 5: {rightScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
+                case 6: {rightScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
+                case 7: {rightScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
+                case 8: {rightScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
+                case 9: {rightScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
+            }
+        }
     }
 
     public void clean(View view) {
+
+        rightScore = 0;
+        leftScore = 0;
 
         ImageView leftOnes = (ImageView) findViewById(R.id.leftOnes);
         ImageView rightOnes = (ImageView) findViewById(R.id.rightOnes);
