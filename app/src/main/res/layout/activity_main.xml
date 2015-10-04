@@ -63,7 +63,8 @@
         android:id="@+id/leftTens"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_num_0" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -89,6 +90,7 @@
         android:id="@+id/rightTens"
         android:layout_centerVertical="true"
         android:layout_toLeftOf="@+id/rightOnes"
-        android:layout_toStartOf="@+id/rightOnes" />
+        android:layout_toStartOf="@+id/rightOnes"
+        android:src="@drawable/ic_num_0" />
 
 </RelativeLayout>
