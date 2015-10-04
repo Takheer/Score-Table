@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Score Table</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="plus">plus</string>
+    <string name="minus">minus</string>
+    <string name="clean">clean</string>
+</resources>

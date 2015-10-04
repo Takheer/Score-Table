@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/leftScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignTop="@+id/rightScore"
+        android:layout_alignLeft="@+id/leftMinus"
+        android:layout_alignStart="@+id/leftMinus" />
+
+    <TextView
+        android:id="@+id/rightScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/rightMinus"
+        android:layout_alignEnd="@+id/rightMinus" />
+
+    <Button
+        android:id="@+id/leftPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:onClick="plusOne"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/leftMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minus"
+        android:onClick="minusOne"
+        android:layout_alignTop="@+id/leftPlus"
+        android:layout_toRightOf="@+id/leftPlus"
+        android:layout_toEndOf="@+id/leftPlus" />
+
+    <Button
+        android:id="@+id/rightMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minus"
+        android:onClick="minusOne"
+        android:layout_alignTop="@+id/rightPlus"
+        android:layout_toLeftOf="@+id/rightPlus"
+        android:layout_toStartOf="@+id/rightPlus" />
+
+    <Button
+        android:id="@+id/rightPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus"
+        android:onClick="plusOne"
+        android:layout_alignTop="@+id/clean"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/clean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/leftMinus"
+        android:layout_centerHorizontal="true"
+        android:text="@string/clean"
+        android:onClick="clean" />
+</RelativeLayout>
