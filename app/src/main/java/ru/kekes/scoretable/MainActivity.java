@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void plusOne(View view) {
+        /*
         TextView scoreView;
         Integer score;
         if (view == findViewById(R.id.leftPlus)){
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         }
         score = Integer.parseInt(scoreView.getText().toString());
         score++;
-        scoreView.setText(score.toString());
+        scoreView.setText(score.toString()); */
     }
 
     public void minusOne(View view) {
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         leftScore.setText(new Integer(0).toString());
         rightScore.setText(new Integer(0).toString());
-        //
+
     }
 
 
