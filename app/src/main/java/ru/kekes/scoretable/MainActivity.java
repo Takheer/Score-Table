@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+// TODO: Изменить интерфейс, в частности добавить загрузочную анимацию и изменить фон на тематический для вида спорта.
+// TODO: Добавить поддержку футбола, баскетбола и хоккея
+// TODO: Сделать отображение только ландшафтного лэйаута -- сделано
 public class MainActivity extends AppCompatActivity {
     static Integer leftScore = 0;
     static Integer leftParties = 0;
