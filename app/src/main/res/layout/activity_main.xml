@@ -7,7 +7,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity"
-    android:onClick="showScore">
+    android:onClick="showScore"
+    android:background="@drawable/bg">
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
         android:textSize="90sp"
         android:layout_alignTop="@+id/rightScoreView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#F8F8FF" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,7 +78,8 @@
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textSize="90sp" />
+        android:textSize="90sp"
+        android:textColor="#F8F8FF"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,7 +90,8 @@
         android:layout_centerHorizontal="true"
         android:textSize="28sp"
         android:layout_marginLeft="8sp"
-        android:layout_marginRight="8sp" />
+        android:layout_marginRight="8sp"
+        android:textColor="#F8F8FF"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -97,7 +101,8 @@
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/textView"
         android:layout_toStartOf="@+id/textView"
-        android:textSize="28sp"/>
+        android:textSize="28sp"
+        android:textColor="#F8F8FF"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,6 +112,7 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:textColor="#F8F8FF"/>
 
 </RelativeLayout>
