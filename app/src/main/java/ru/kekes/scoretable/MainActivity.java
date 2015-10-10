@@ -1,16 +1,18 @@
 package ru.kekes.scoretable;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    static int leftScore = 0;
-    static int rightScore = 0;
+    static Integer leftScore = 0;
+    static Integer leftParties = 0;
+    static Integer rightScore = 0;
+    static Integer rightParties = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        menu.add("menu1");
+        menu.add("menu2");
+        menu.add("menu3");
+        menu.add("menu4");
         return true;
     }
 
@@ -34,8 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Toast.makeText(this, "There is no settings yet", Toast.LENGTH_SHORT).show();
             return true;
-        }
+        } else Toast.makeText(this, "This is " + item.getTitle(), Toast.LENGTH_SHORT).show();
 
         return super.onOptionsItemSelected(item);
     }
@@ -44,157 +51,81 @@ public class MainActivity extends AppCompatActivity {
     public void plusOne(View view) {
 
         if (view == findViewById(R.id.leftPlus)) {
-            ImageView leftScoreTensView = (ImageView) findViewById(R.id.leftTens);
-            ImageView leftScoreOnesView = (ImageView) findViewById(R.id.leftOnes);
+            TextView leftScoreView = (TextView) findViewById(R.id.leftScoreView);
+            TextView leftPartiesView = (TextView) findViewById(R.id.leftParties);
+            TextView rightScoreView = (TextView) findViewById(R.id.rightScoreView);
+            TextView rightPartiesView = (TextView) findViewById(R.id.rightParties);
             leftScore++;
-            int leftScoreTens = leftScore / 10;
-            int leftScoreOnes = leftScore % 10;
 
-            switch (leftScoreOnes) {
-                case 0: {leftScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
-                case 1: {leftScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {leftScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {leftScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {leftScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {leftScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {leftScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {leftScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {leftScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {leftScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
+            if (leftScore >= 25 && leftScore - rightScore >= 2) {
+                leftScore = 0;
+                rightScore = 0;
+                leftParties++;
             }
-
-            switch (leftScoreTens) {
-                case 0: {leftScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
-                case 1: {leftScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {leftScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {leftScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {leftScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {leftScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {leftScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {leftScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {leftScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {leftScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
-            }
+            leftScoreView.setText(leftScore.toString());
+            rightScoreView.setText(rightScore.toString());
+            leftPartiesView.setText(leftParties.toString());
+            rightPartiesView.setText(rightParties.toString());
         } else if (view == findViewById(R.id.rightPlus)){
-            ImageView rightScoreTensView = (ImageView) findViewById(R.id.rightTens);
-            ImageView rightScoreOnesView = (ImageView) findViewById(R.id.rightOnes);
+            TextView leftScoreView = (TextView) findViewById(R.id.leftScoreView);
+            TextView leftPartiesView = (TextView) findViewById(R.id.leftParties);
+            TextView rightScoreView = (TextView) findViewById(R.id.rightScoreView);
+            TextView rightPartiesView = (TextView) findViewById(R.id.rightParties);
             rightScore++;
-            int rightScoreTens = rightScore / 10;
-            int rightScoreOnes = rightScore % 10;
 
-            switch (rightScoreOnes) {
-                case 0: {rightScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
-                case 1: {rightScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {rightScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {rightScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {rightScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {rightScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {rightScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {rightScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {rightScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {rightScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
+            if (rightScore >= 25 && rightScore - leftScore >=2) {
+                leftScore = 0;
+                rightScore = 0;
+                rightParties++;
             }
-
-            switch (rightScoreTens) {
-                case 0: {rightScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
-                case 1: {rightScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {rightScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {rightScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {rightScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {rightScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {rightScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {rightScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {rightScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {rightScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
-            }
+            leftScoreView.setText(leftScore.toString());
+            rightScoreView.setText(rightScore.toString());
+            leftPartiesView.setText(leftParties.toString());
+            rightPartiesView.setText(rightParties.toString());
         }
     }
 
     public void minusOne(View view) {
         if (view == findViewById(R.id.leftMinus)) {
-            ImageView leftScoreTensView = (ImageView) findViewById(R.id.leftTens);
-            ImageView leftScoreOnesView = (ImageView) findViewById(R.id.leftOnes);
+            TextView leftScoreView = (TextView) findViewById(R.id.leftScoreView);
             leftScore--;
             if (leftScore < 0) leftScore = 0;
-            int leftScoreTens = leftScore / 10;
-            int leftScoreOnes = leftScore % 10;
-
-            switch (leftScoreOnes) {
-                case 1: {leftScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {leftScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {leftScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {leftScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {leftScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {leftScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {leftScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {leftScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {leftScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
-                default: {leftScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
-            }
-
-            switch (leftScoreTens) {
-                case 1: {leftScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {leftScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {leftScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {leftScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {leftScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {leftScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {leftScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {leftScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {leftScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
-                default: {leftScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
-            }
+            leftScoreView.setText(leftScore.toString());
         } else if (view == findViewById(R.id.rightMinus)){
-            ImageView rightScoreTensView = (ImageView) findViewById(R.id.rightTens);
-            ImageView rightScoreOnesView = (ImageView) findViewById(R.id.rightOnes);
+            TextView rightScoreView = (TextView) findViewById(R.id.rightScoreView);
             rightScore--;
             if (rightScore < 0) rightScore = 0;
-            int rightScoreTens = rightScore / 10;
-            int rightScoreOnes = rightScore % 10;
-
-            switch (rightScoreOnes) {
-                case 1: {rightScoreOnesView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {rightScoreOnesView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {rightScoreOnesView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {rightScoreOnesView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {rightScoreOnesView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {rightScoreOnesView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {rightScoreOnesView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {rightScoreOnesView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {rightScoreOnesView.setImageResource(R.drawable.ic_num_9); break;}
-                default: {rightScoreOnesView.setImageResource(R.drawable.ic_num_0); break;}
-            }
-
-            switch (rightScoreTens) {
-                case 1: {rightScoreTensView.setImageResource(R.drawable.ic_num_1); break;}
-                case 2: {rightScoreTensView.setImageResource(R.drawable.ic_num_2); break;}
-                case 3: {rightScoreTensView.setImageResource(R.drawable.ic_num_3); break;}
-                case 4: {rightScoreTensView.setImageResource(R.drawable.ic_num_4); break;}
-                case 5: {rightScoreTensView.setImageResource(R.drawable.ic_num_5); break;}
-                case 6: {rightScoreTensView.setImageResource(R.drawable.ic_num_6); break;}
-                case 7: {rightScoreTensView.setImageResource(R.drawable.ic_num_7); break;}
-                case 8: {rightScoreTensView.setImageResource(R.drawable.ic_num_8); break;}
-                case 9: {rightScoreTensView.setImageResource(R.drawable.ic_num_9); break;}
-                default: {rightScoreTensView.setImageResource(R.drawable.ic_num_0); break;}
-            }
+            rightScoreView.setText(rightScore.toString());
         }
     }
 
     public void clean(View view) {
+        TextView leftScoreView = (TextView) findViewById(R.id.leftScoreView);
+        TextView rightScoreView = (TextView) findViewById(R.id.rightScoreView);
+        TextView leftPartiesView = (TextView) findViewById(R.id.leftParties);
+        TextView rightPartiesView = (TextView) findViewById(R.id.rightParties);
 
         rightScore = 0;
         leftScore = 0;
+        rightParties = 0;
+        leftParties = 0;
 
-        ImageView leftOnes = (ImageView) findViewById(R.id.leftOnes);
-        ImageView rightOnes = (ImageView) findViewById(R.id.rightOnes);
-        ImageView leftTens = (ImageView) findViewById(R.id.leftTens);
-        ImageView rightTens = (ImageView) findViewById(R.id.rightTens);
+        leftScoreView.setText(leftScore.toString());
+        rightScoreView.setText(rightScore.toString());
+        leftPartiesView.setText(leftParties.toString());
+        rightPartiesView.setText(rightParties.toString());
+    }
 
-        leftOnes.setImageResource(R.drawable.ic_num_0);
-        leftTens.setImageResource(R.drawable.ic_num_0);
-        rightOnes.setImageResource(R.drawable.ic_num_0);
-        rightTens.setImageResource(R.drawable.ic_num_0);
+    public void showScore(View view){
+        TextView leftScoreView = (TextView) findViewById(R.id.leftScoreView);
+        TextView rightScoreView = (TextView) findViewById(R.id.rightScoreView);
+        TextView leftPartiesView = (TextView) findViewById(R.id.leftParties);
+        TextView rightPartiesView = (TextView) findViewById(R.id.rightParties);
 
+        leftScoreView.setText(leftScore.toString());
+        rightScoreView.setText(rightScore.toString());
+        leftPartiesView.setText(leftParties.toString());
+        rightPartiesView.setText(rightParties.toString());
     }
 
 

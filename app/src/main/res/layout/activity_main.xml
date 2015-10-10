@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:onClick="showScore">
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -31,11 +32,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/leftMinus"
-        android:layout_alignBottom="@+id/leftPlus"
-        android:layout_toRightOf="@+id/leftPlus"
-        android:layout_toEndOf="@+id/leftPlus"
         android:src="@drawable/ic_remove_black_24dp"
-        android:onClick="minusOne" />
+        android:onClick="minusOne"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/leftPlus"
+        android:layout_toEndOf="@+id/leftPlus" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -51,46 +52,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/rightMinus"
-        android:layout_alignBottom="@+id/clean"
-        android:layout_toLeftOf="@+id/rightPlus"
-        android:layout_toStartOf="@+id/rightPlus"
         android:src="@drawable/ic_remove_black_24dp"
-        android:onClick="minusOne" />
+        android:onClick="minusOne"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/rightPlus"
+        android:layout_toStartOf="@+id/rightPlus" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/leftTens"
-        android:layout_centerVertical="true"
+        android:text="0"
+        android:id="@+id/leftScoreView"
+        android:textSize="90sp"
+        android:layout_alignTop="@+id/rightScoreView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/ic_num_0" />
+        android:layout_alignParentStart="true" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/leftOnes"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/leftTens"
-        android:layout_toEndOf="@+id/leftTens"
-        android:src="@drawable/ic_num_0" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rightOnes"
+        android:text="0"
+        android:id="@+id/rightScoreView"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_num_0" />
+        android:textSize="90sp" />
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/rightTens"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/rightOnes"
-        android:layout_toStartOf="@+id/rightOnes"
-        android:src="@drawable/ic_num_0" />
+        android:text=":"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="28sp"
+        android:layout_marginLeft="8sp"
+        android:layout_marginRight="8sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/leftParties"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView"
+        android:textSize="28sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/rightParties"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView"
+        android:layout_toEndOf="@+id/textView"
+        android:textSize="28sp" />
 
 </RelativeLayout>
